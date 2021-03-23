@@ -17,7 +17,7 @@ Beberapa contoh setting yang penting
 
 
 #visible_hostname xxx.xxx.xx.xx #IP address server Squid
-  "Namun bisa menghiraukan bagian visible_hostname karena sudah diatur secara otomatis mencari hostname"
+Namun bisa menghiraukan bagian visible_hostname karena sudah diatur secara otomatis mencari hostname
 
 find acl localnet lalu hilangkan tanda #
 
