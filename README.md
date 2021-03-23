@@ -15,14 +15,15 @@ vi /etc/squid/squid.conf
 
 Beberapa contoh setting yang penting
 
-# visible_hostname 192.168.0.1  # IP address server Squid anda
+
+#visible_hostname xxx.xxx.xx.xx #IP address server Squid
   "Namun bisa menghiraukan bagian visible_hostname karena sudah diatur secara otomatis mencari hostname"
 
 find acl localnet lalu hilangkan tanda #
 
-# Example rule allowing access from your local networks.
-# Adapt to list your (internal) IP networks from where browsing
-# should be allowed
+#Example rule allowing access from your local networks.
+#Adapt to list your (internal) IP networks from where browsing
+#should be allowed
 acl localnet src 10.0.0.0/8     # RFC1918 possible internal network
 acl localnet src 172.16.0.0/12  # RFC1918 possible internal network
 acl localnet src 192.168.0.0/16 # RFC1918 possible internal network
