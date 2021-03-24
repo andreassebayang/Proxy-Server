@@ -1,18 +1,49 @@
-apt update
-apt install squid -y
+==================
+PROXY SERVER SQUID
+==================
 
-vi /etc/squid/squid.conf
-  > http_port 3128
+=================
+-- SERVER SIDE --
+=================
+
+1) apt update
+2) apt install squid -y
+
+3) Edit File squid.conf
+   vi /etc/squid/squid.conf
   
-  > visible_hostname
+    Find :
   
-  > # Example rule allowing access from your local networks.
-    # Adapt to list your (internal) IP networks from where browsing
-    # should be allowed
-    acl localnet src 10.0.0.0/8    # RFC1918 possible internal network
-    acl localnet src 172.16.0.0/12 # RFC1918 possible internal network
-    acl localnet src 192.168.0.0/16        # RFC1918 possible internal network
-    acl localnet src fc00::/7       # RFC 4193 local private network range
-    acl localnet src fe80::/10      # RFC 4291 link-local (directly plugged) machines
+      Check the port
+      a.> http_port 3128
+       
+      You can ignore this section because by default it will detect it automatically
+      b.> visible_hostname
   
-  > http_access allow localnet
+      Please sign # on your acl remove
+      c.> # Example rule allowing access from your local networks.
+          # Adapt to list your (internal) IP networks from where browsing
+          # should be allowed
+          acl localnet src 10.0.0.0/8    # RFC1918 possible internal network
+          acl localnet src 172.16.0.0/12 # RFC1918 possible internal network
+          acl localnet src 192.168.0.0/16        # RFC1918 possible internal network
+          acl localnet src fc00::/7       # RFC 4193 local private network range
+          acl localnet src fe80::/10      # RFC 4291 link-local (directly plugged) machines
+  
+      And finally in the http_access section, please add the command line as above
+      d.> http_access allow localnet
+  
+ 4) Restart Squid Service
+    systemctl restart squid.service
+
+====================
+ -- CLIENT SIDE -- 
+====================
+
+ On the Client side there is not much to set up, Just point the Client side Proxy to the Server
+  
+ ==> IP address Server Squid 
+      Port 3128
+ 
+Done
+Congratulations, your Proxy Server is ready and can be used!!!
