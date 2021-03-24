@@ -42,7 +42,7 @@ PROXY SERVER SQUID
 
  On the Client side there is not much to set up, Just point the Client side Proxy to the Server
   
- ==> IP address Server Squid 
+ ==> XXX.XXX.XX.XX (IP address Server Squid) 
       Port 3128
  
 Done
