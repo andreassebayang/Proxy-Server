@@ -1,9 +1,9 @@
 ==================
-#PROXY SERVER SQUID
+# PROXY SERVER SQUID
 ==================
 
 =================
--- SERVER SIDE --
+# -- SERVER SIDE --
 =================
 
 1) apt update
@@ -37,7 +37,7 @@
     systemctl restart squid.service
 
 ====================
- -- CLIENT SIDE -- 
+# -- CLIENT SIDE -- 
 ====================
 
  On the Client side there is not much to set up, Just point the Client side Proxy to the Server
